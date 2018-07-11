@@ -1,7 +1,6 @@
 function getIssues() {
-  const urlText = $('#results')[0].innerText.slice(19)
-  fetch('https://api.github.com/repos/' + urlText + '/issues', {
-    method: 'GET',
+  fetch('https://api.github.com/repos/nmlstyl/javascript-fetch-lab/issues', {
+    method: 'get',
     headers: {
       'Authorization': `token ${getToken()}`
     },
@@ -22,12 +21,11 @@ function showIssues(json) {
 }
 
 function createIssue() {
-  const urlText = $('#results')[0].innerText.slice(19)
-  let thisTitle = $('#title')[0].value
-  let thisBody = $('#body')[0].value
+  let thisTitle = document.getElementById('title').value
+  let thisBody = document.getElementById('body').value
   let postData = { title: thisTitle, body: thisBody }
-  fetch('https://api.github.com/repos/' + urlText + '/issues', {
-    method: 'POST',
+  fetch('https://api.github.com/repos/nmlstyl/javascript-fetch-lab/issues', {
+    method: 'post',
     headers: {
       'Authorization': `token ${getToken()}`
     },
@@ -45,7 +43,7 @@ function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
 
   fetch('https://api.github.com/repos/' + repo + '/forks', {
-    method: 'POST',
+    method: 'post',
     headers: {
       'Authorization': `token ${getToken()}`
     }
@@ -60,5 +58,5 @@ function forkRepo() {
 function getToken() {
   //change to your token to run in browser, but set
   //back to '' before committing so all tests pass
-  return `aaa104c0d5501031aa261d7220707cac96cd5a1e`
+  return ``
 }

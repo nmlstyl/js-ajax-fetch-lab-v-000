@@ -1,12 +1,12 @@
 # Created by https://www.gitignore.io/api/node
 
+
 ### Node ###
 # Logs
 logs
 *.log
 npm-debug.log*
 
-index.js*
 
 # Runtime data
 pids

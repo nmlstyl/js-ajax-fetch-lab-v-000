@@ -6,6 +6,8 @@ logs
 *.log
 npm-debug.log*
 
+index.js*
+
 # Runtime data
 pids
 *.pid
